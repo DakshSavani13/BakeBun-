@@ -477,7 +477,7 @@ const Menu = () => {
   const { addToCart } = useCart();
   const handleAddToCart = () => {
     // Check if user is logged in
-    const storedUser = localStorage.getItem('mockUser');
+    const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
     if (!storedUser) {
       alert('You must be logged in to place an order.');
       window.location.href = '/login';
